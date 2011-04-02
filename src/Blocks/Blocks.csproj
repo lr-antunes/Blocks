@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E16F54FD-83B2-4D7D-8055-E205CAD81E11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rovidi.Blocks</RootNamespace>
+    <AssemblyName>Blocks</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\dist\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\dist\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIn\AddIn.cs" />
+    <Compile Include="AddIn\AddInManager.cs" />
+    <Compile Include="AddIn\AddInDependency.cs" />
+    <Compile Include="App\AppBase.cs" />
+    <Compile Include="App\Arguments\AppArgument.cs" />
+    <Compile Include="App\AppBootstrapper.cs" />
+    <Compile Include="App\AppInfo.cs" />
+    <Compile Include="App\AppTask.cs" />
+    <Compile Include="App\AppTaskManager.cs" />
+    <Compile Include="App\Arguments\ArgumentParser.cs" />
+    <Compile Include="App\IApp.cs" />
+    <Compile Include="App\IAppConfig.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\ConfigSourceBase.cs" />
+    <Compile Include="Configuration\ConfigSources\DBConfigSource.cs" />
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\IConfigSource.cs" />
+    <Compile Include="Core\IResult.cs" />
+    <Compile Include="Core\Result.cs" />
+    <Compile Include="Data\DBAccess.cs" />
+    <Compile Include="Data\DBSchema.cs" />
+    <Compile Include="Data\DBSchemaManager.cs" />
+    <Compile Include="Data\IDBAccess.cs" />
+    <Compile Include="Development\Assert.cs" />
+    <Compile Include="Development\CodeTask.cs" />
+    <Compile Include="IO\FileSystemMonitor.cs" />
+    <Compile Include="Log\Enums.cs" />
+    <Compile Include="Log\LogEntry.cs" />
+    <Compile Include="Log\LogEntryFilter.cs" />
+    <Compile Include="Log\LogEntryFilters\DefaultLogEntryFilter.cs" />
+    <Compile Include="Log\LogErrorEventArgs.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Log\Loggers\AsyncLogger.cs" />
+    <Compile Include="Log\Loggers\CompositeLogger.cs" />
+    <Compile Include="Log\Loggers\ConsoleLogger.cs" />
+    <Compile Include="Log\Loggers\FileLogger.cs" />
+    <Compile Include="Log\Loggers\SocketLogger.cs" />
+    <Compile Include="Log\Loggers\TextWriterLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\SerializationManager.cs" />
+    <Compile Include="Text\Expressions\ExpressionInterpreter.cs" />
+    <Compile Include="Text\Regex\RegexPatterns.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
